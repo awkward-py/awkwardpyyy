@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awkwardpy - Updates</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./a.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload image
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <h1>
+        <a style="color: white;" href="#" class="logo">Awkwardpy.<span style="color: red; display: inline-block;">pro</span></a>
+      </h1>
+
+    
+     
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" id="home">
+        <div class="container">
+
+          <figure class="hero-banner">
+            <img src="./assets/images/banner.png" width="804" height="643" loading="lazy" alt="hero banner"
+              class="w-100">
+          </figure>
+
+          <div class="hero-content">
+
+            <h2 class="h1 hero-title">Subscribe to Awkwardpy.pro for Exciting January 10 Updates and Surprises!</h2>
+
+            <p class="section-text">
+              Pankaj has developed a platform where select memories and surprises have been stored for you.
+            </p>
+
+            <form action="" class="hero-form" id="subscription-form">
+              <input type="email" name="email_address" placeholder="Enter Your Email" aria-label="Enter Your Email" required class="input-field" id="email-input">
+              <button type="submit" class="btn btn-primary">Subscribe!</button>
+          </form>
+
+          <!-- Loading Spinner -->
+<div id="loading" class="loading" style="display: none;">Loading...</div>
+            <div id="toast" class="toast"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about">
+        <div class="container">
+
+          <h2 class="h2 section-title">Also You.pro</h2>
+
+          <p class="section-text">
+            This platform is a reflection of our love, growth, and dedication. It’s a journey we’ve built together, and we’re excited to share it with you as we continue to grow.
+          </p>
+
+          <ul class="about-list">
+
+            <li>
+              <div class="about-card about-card-1">
+
+                <figure class="card-banner">
+                  <img style="border-radius: 50%;" src="./assets/images/admin.jpg" width="130" height="97" loading="lazy"
+                    alt="Automated Ticket Routing">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Awkwardpy.pro</a>
+                  </h3>
+
+                  <p class="card-text">
+                    I've been thinking about this idea for a few months. I started working on this site in September 2024, and at that time, I had no idea that it would actually come together. But now, I’m proud to show it to you!
+                  </p>
+
+                  <a  class="btn-link">
+                  
+                    <span class="span">- Pankaj Rawat</span>
+
+                   
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+          
+
+          </ul>
+
+          <p class="section-text">
+            Explore My Personal Portfolio, Creative Space, and More at Awkwardpy.pro!
+            <a href="https://awkwardpy.pro" class="btn-link">
+              <span class="span">Visit Awkwardpy.pro</span>
+
+              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+            </a>
+          </p>
+
+        </div>
+      </section>
+
+
+
+
+
+     
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+   
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2024 <span class="span">awkwardpy.pro</span>. All rights reserved by <a href="#"
+            class="copyright-link">awkwardpy</a>
+        </p>
+
+        
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+  <script>
+    document.getElementById("subscription-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission from reloading the page
+
+    // Get the email value (for potential further use)
+    const email = document.getElementById("email-input").value;
+
+    // Show loading indicator
+    const loading = document.getElementById("loading");
+    loading.style.display = "block"; // Show loading text
+
+    // Add a delay before showing the toast and performing page reload
+    setTimeout(function() {
+        // Hide the loading indicator after a short delay
+        loading.style.display = "none";
+
+        // Show the toast notification
+        const toast = document.getElementById("toast");
+        toast.textContent = "You have subscribed to awkwardpy.pro for 10th January surprise!";
+        toast.classList.add("show");
+
+        // Hide the toast and reload the page after a delay
+        setTimeout(function() {
+            toast.classList.remove("show"); // Hide the toast after 3 seconds
+            location.reload(); // Reload the page after the toast disappears
+        }, 5000); // 3 seconds delay for toast visibility
+    }, 2000); // Simulate 2 seconds delay before showing the toast
+});
+
+
+  </script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
