@@ -1296,6 +1296,39 @@ body { font-size: 2rem; }
   <script>
 
 
+
+
+    
+    document.getElementById("subscription-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission from reloading the page
+
+    // Get the email value (for potential further use)
+    const email = document.getElementById("email-input").value;
+
+    // Show loading indicator
+    const loading = document.getElementById("loading");
+    loading.style.display = "block"; // Show loading text
+
+    // Add a delay before showing the toast and performing page reload
+    setTimeout(function() {
+        // Hide the loading indicator after a short delay
+        loading.style.display = "none";
+
+        // Show the toast notification
+        const toast = document.getElementById("toast");
+        toast.textContent = "You have subscribed to awkwardpy.pro for 10th January surprise!";
+        toast.classList.add("show");
+
+        // Hide the toast and reload the page after a delay
+        setTimeout(function() {
+            toast.classList.remove("show"); // Hide the toast after 3 seconds
+            location.reload(); // Reload the page after the toast disappears
+        }, 5000); // 3 seconds delay for toast visibility
+    }, 2000); // Simulate 2 seconds delay before showing the toast
+});
+
+
+
 'use strict';
 
 
@@ -1342,34 +1375,6 @@ window.addEventListener("scroll", function () {
 
 
 
-
-    document.getElementById("subscription-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form submission from reloading the page
-
-    // Get the email value (for potential further use)
-    const email = document.getElementById("email-input").value;
-
-    // Show loading indicator
-    const loading = document.getElementById("loading");
-    loading.style.display = "block"; // Show loading text
-
-    // Add a delay before showing the toast and performing page reload
-    setTimeout(function() {
-        // Hide the loading indicator after a short delay
-        loading.style.display = "none";
-
-        // Show the toast notification
-        const toast = document.getElementById("toast");
-        toast.textContent = "You have subscribed to awkwardpy.pro for 10th January surprise!";
-        toast.classList.add("show");
-
-        // Hide the toast and reload the page after a delay
-        setTimeout(function() {
-            toast.classList.remove("show"); // Hide the toast after 3 seconds
-            location.reload(); // Reload the page after the toast disappears
-        }, 5000); // 3 seconds delay for toast visibility
-    }, 2000); // Simulate 2 seconds delay before showing the toast
-});
 
 
   </script>
